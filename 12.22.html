@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css.css"/>
+	<link rel="stylesheet" type="text/css" href="js/swiper.css"/>
+	<script src="js/iscroll.js"></script>
+	<script src="js/swiper.js"></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="img.a/logo.png"/>
+		</div>
+		<ul>
+			<li class="li1">ABOUT</li>
+			<li class="li2">MACHINES</li>
+			<li class="li3">EVENTS</li>
+			<li class="li4">CONTACT</li>
+		</ul>
+	</header>
+	<!--内容-->
+	<div style="height: 110px;"></div>
+	<div class="main1">
+		<div class="asd">
+			<ul>
+				<li id="btn1"> who we are</li>
+				<li id="btn2">why rtdd</li>
+			</ul>
+		</div>
+		<div class="swiper-container a">			
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<p class="who-p1">ABOUT</p>
+					<h2>Who we are</h2>
+					<span>Designed by Rtdd in Italy Assembled in China</span>
+					<p class="who-p2">Rtdd Machinery was founded in 2011 by several Italian engineers with years of experience in finishing machinery and</p>
+					<p class="who-p3">now we are a team of nearly 50 engineers and technicians who are living with passion and ideas. We spent the past</p>
+					<p class="who-p4"> years for studying and developing better machines with advanced technology. We don’t make all machines, but we</p>
+					<p class="who-p5">make only better machines. All mechanical, software, and electronic elements are designed in Italy by Rtdd, and</p>			
+				</div>
+				<div class="swiper-slide">
+					<p class="why-p1">Why rtdd</p>
+					<h2>why rtdd</h2>
+					<span>The strategy of sustainable development</span>
+					<p class="whyrtdd_p1">We believe the very best finishing machines can produce not only great fabrics but as well as a better world. We are </p>
+					<p class="whyrtdd_p2">determined to make the better machines and we always try our best to protect our environment. Reducing labor,</p>
+					<p class="whyrtdd_p3"> power, water, and other related energy are daily topics. However, aftersales service is one of our most important</p>
+					<p class="whyrtdd_p4"> jobs to face every day. We have built up a professional team to give our best service to you before, during, and after</p>
+					<p class="whyrtdd_p5"> purchasing our products. Come to us, we will lead you to a new way to business and a place with bluer sky.</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="main2">
+		<div class="qwe">
+			<ul>
+				<li class="btn1">
+					ISUEDE
+					<ol>
+						<li>Info</li>
+						<li>Gallery</li>						
+					</ol>					
+				</li>
+				<li class="btn1">
+					AMMONIA
+					<ol>
+						<li>Info</li>
+						<li>Gallery</li>						
+					</ol>
+				</li>
+			</ul>
+		</div>
+		<div class="tu1">
+			<h1>MACHINES</h1>
+			<img src="img.a/machineslogo.png"/>
+			<hr />
+			<p>AUTO COOLING|AUTO CLEANING|AUTO CONTROL </p>
+		</div>
+		<div class="swiper-container b">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<p class="p">Self-cooling Brush Drum-sueding</p>
+					<p class="pp">THE ONLY SELF-COOLING BRUSH DRUM-SUEDING MACHINE</p>
+					<p class="pp">CREATOR OF CENTRAL SUCTION FOR BRUSH DRUM-SUEDING</p>
+					<p class="pp">DESIGNED IN ITALY, WITH 16 CHINESE AND INTERNATIONAL PATENTS</p>
+					<p class="pp">LOWER TENTION, LOWER LABOR</p>
+					<p class="pp">LONG LIFE, HIGH EFFICIENCY</p>
+					<p class="pp">SOLVE COLOR DIFFERENCE AND MAKRS PROBLEMS FROM THE ROOT CAUSES</p>							
+				</div>
+				<div class="swiper-slide">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main1"></div>
+	<div class="main1"></div>
+		
+	
+</body>
+	<script type="text/javascript">
+		//导航点击切换
+		$(".li1").click(function(){
+			$("html,body").animate({scrollTop:0},200)
+		})
+		$('.li2').click(function(){
+			$("html,body").animate({scrollTop:600},200)
+		})
+		$('.li3').click(function(){
+			$("html,body").animate({scrollTop:1200},200)
+		})
+		$('.li4').click(function(){
+			$("html,body").animate({scrollTop:1800},200)
+		})
+		//导航滑动切换
+		$(window).scroll(function(){
+			//console.log($(window).scrollTop())
+			if($(window).scrollTop()<600){
+				$('.li1').addClass("active").siblings().removeClass("active");
+			}
+			if($(window).scrollTop()>=600 && $(window).scrollTop()<1200){
+				$('.li2').addClass("active").siblings().removeClass("active");
+			}
+			if($(window).scrollTop()>=1200 && $(window).scrollTop()<1800){
+				$('.li3').addClass("active").siblings().removeClass("active");
+			}
+			if($(window).scrollTop()>=1800 && $(window).scrollTop()<2400){
+				$('.li4').addClass("active").siblings().removeClass("active");
+			}
+		})
+		//图1轮播
+		var mySwiper1 = new Swiper('.a',{
+		})
+		var mySwiper2 = new Swiper('.b',{
+		})
+		$('#btn1').click(function(){
+			mySwiper1.slidePrev();
+			$(this).css({"color":"black"})
+			$("#btn2").css("color",'')
+			
+		})
+		$('#btn2').click(function(){
+			mySwiper1.slideNext();
+			$(this).css({"color":"black"})
+			$("#btn1").css({"color":""})
+		})
+		$(".btn1").hover(function(){
+			$(this).children('ol').stop(true).slideDown(500);
+		},function(){
+			$(this).children('ol').stop(true).slideUp(500)
+		})
+	</script>
+</html>
